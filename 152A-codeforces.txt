@@ -1,0 +1,29 @@
+#include<iostream>
+#include <set>
+#include<vector>
+using namespace std;
+int main(){
+int n,m;
+cin >> n >> m;
+vector<string> grade(n);
+for(int i=0;i<n;++i){
+cin >> grade[i];
+}
+set<int> sel;
+for(int j=0;j<m;++j){
+char grd='0';
+for(int i=0;i<n;++i){
+if(grade[i][j]>grd){
+grd=grade[i][j];
+}
+}
+for(int i=0;i<n;++i){
+if(grade[i][j]==grd){
+sel.insert(i);
+}
+}
+}
+cout << sel.size() << endl;
+return 0;
+
+}
